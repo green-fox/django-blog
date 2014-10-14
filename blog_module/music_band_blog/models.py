@@ -10,17 +10,20 @@ from django.db import models
     
 
 class Video(models.Model):
-    YOUTUBE = 'YOUTUBE'
-    DAILYMOTION = 'DAILYMOTION'
-    VIMEO = 'VIMEO'
+    YOUTUBE = 'YT'
+    DAILYMOTION = 'DM'
+    VIMEO = 'VM'
     VIDEO_PLAYER_CHOICES= (
         (YOUTUBE, 'youtube'),
         (DAILYMOTION, 'dailymotion'),
         (VIMEO,'vimeo'),
     )
-    video_player = models.CharField(max_length = 1,
+    video_player = models.CharField(max_length = 2,
                     choices = VIDEO_PLAYER_CHOICES,
                     default = YOUTUBE)
     title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
 
 #class Concert(models.Model):
