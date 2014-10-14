@@ -8,4 +8,4 @@ class VideoAdmin(admin.ModelAdmin):
     fields = ['title','video_player' ]
     list_display = ('title','video_player','pub_date','updated')
 admin.site.register(Video,VideoAdmin)
-admin.site.register(Admin)
+admin.site.register(Article)
