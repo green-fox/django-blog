@@ -5,6 +5,6 @@ from django.contrib import admin
 from music_band_blog.models import Video
 
 class VideoAdmin(admin.ModelAdmin):
-    fields = ['title','type','pub_date','updated' ]
-
+    fields = ['title','video_player' ]
+    list_display = ('title','video_player','pub_date','updated')
 admin.site.register(Video,VideoAdmin)
