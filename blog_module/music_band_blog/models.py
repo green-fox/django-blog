@@ -4,7 +4,7 @@ from django.db import models
 
 
 #class Article(models.Model):
-    title = models.CharField(max_length=200)
+#    title = models.CharField(max_length=200)
 
 #class Picture(models.Model):
     
@@ -18,7 +18,7 @@ class Video(models.Model):
         (DAILYMOTION, 'dailymotion'),
         (VIMEO,'vimeo'),
     )
-    video_player = (max_length = 1,
+    video_player = models.CharField(max_length = 1,
                     choices = VIDEO_PLAYER_CHOICES,
                     default = YOUTUBE)
     title = models.CharField(max_length=200)
