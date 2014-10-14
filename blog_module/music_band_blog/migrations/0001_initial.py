@@ -14,8 +14,9 @@ class Migration(migrations.Migration):
             name='Video',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('video_player', models.CharField(default=b'YOUTUBE', max_length=1, choices=[(b'YOUTUBE', b'youtube'), (b'DAILYMOTION', b'dailymotion'), (b'VIMEO', b'vimeo')])),
+                ('video_player', models.CharField(default=b'YT', max_length=2, choices=[(b'YT', b'youtube'), (b'DM', b'dailymotion'), (b'VM', b'vimeo')])),
                 ('title', models.CharField(max_length=200)),
+                ('pub_date', models.DateTimeField(auto_now_add=True)),
             ],
             options={
             },
